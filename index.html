@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIA Innovatio - IT consulting</title>
+<meta name="description" content="SIA Innovatio is a Latvian company providing general IT consulting: IT strategy, software architecture, cloud and infrastructure, data, process automation and security.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2328323f'/%3E%3Ctext x='16' y='23' font-family='Helvetica,sans-serif' font-size='20' fill='white' text-anchor='middle'%3Ei%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap">
+<style>
+:root{--ink:#28323f;--text:#27303b;--body:#3a4452;--muted:#5d6775;--soft:#f4f6f8;--rule:#9aa4b1;--on-ink:#d7dde5;--on-ink-muted:#c3cbd6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Helvetica Neue",Helvetica,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.wrap{width:min(1120px,100% - 48px);margin-inline:auto}
+.caps{font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.label{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--muted)}
+.dark{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.scenery{position:absolute;left:0;bottom:0;width:100%;pointer-events:none}
+.head{display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center;margin-bottom:72px}
+.head h2{font-size:clamp(48px,7vw,80px);font-weight:300;line-height:1.1}
+.rule{width:130px;height:1px;background:var(--rule)}
+.dark .rule{background:rgba(255,255,255,.6)}
+section{padding:clamp(72px,9vw,120px) 0}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo b{font-size:clamp(34px,4vw,44px);font-weight:300;letter-spacing:1px}
+.logo small{font-size:12px;font-weight:700;letter-spacing:3px}
+.links{display:flex;align-items:center;gap:32px;font-size:14px}
+.links a:hover,.foot-nav a:hover{color:#c9d3df}
+.langs{display:flex;gap:8px;margin-left:8px}
+.langs a{width:44px;height:44px;border-radius:50%;border:1px solid #fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+.langs a[aria-current]{background:#fff;color:var(--ink)}
+
+/* hero */
+.hero{min-height:max(640px,100vh);display:flex}
+.hero-inner{position:relative;flex:1;display:flex;flex-direction:column;padding:64px 0 40px}
+.hero-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center;padding:48px 0}
+.hero h1{font-size:clamp(56px,9vw,104px);font-weight:100;letter-spacing:1px;line-height:1.05}
+.hero p{max-width:680px;font-size:15px;letter-spacing:1px;line-height:1.8}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:24px 96px;margin-top:56px}
+.btn{width:280px;max-width:100%;height:52px;border:1px solid #fff;display:flex;align-items:center;justify-content:center;font-size:15px;transition:background .2s,color .2s}
+.btn:hover{background:#fff;color:var(--ink)}
+.scroll{align-self:center;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;padding:8px}
+
+/* about */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:80px}
+.prose{display:flex;flex-direction:column;gap:20px;font-size:17px;line-height:1.8;color:var(--body)}
+.facts{background:var(--soft);padding:40px;display:flex;flex-direction:column;gap:22px}
+.facts div{display:flex;flex-direction:column;gap:4px;font-size:17px}
+
+/* services */
+.soft{background:var(--soft)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{background:#fff;padding:40px 36px;display:flex;flex-direction:column;gap:18px}
+.card svg{width:36px;height:36px;stroke:var(--ink)}
+.card h3{font-size:15px}
+.card p{font-size:15px;line-height:1.7;color:#4a5462}
+
+/* approach */
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:120px 320px minmax(0,1fr);align-items:center;padding:30px 40px}
+.step span:first-child{font-size:40px;font-weight:100}
+.step span:nth-child(2){font-size:15px}
+.step span:last-child{font-size:16px;line-height:1.7;color:var(--on-ink)}
+
+/* terms */
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:80px;row-gap:44px}
+.terms div{display:flex;flex-direction:column;gap:12px}
+.terms h3{font-size:14px}
+.terms p{font-size:15px;line-height:1.75;color:var(--body)}
+
+/* footer */
+footer{padding:110px 0 80px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:64px}
+.foot-top h2{font-size:clamp(56px,7vw,88px);font-weight:100;line-height:1;margin-bottom:28px}
+.foot-nav{display:flex;flex-wrap:wrap;gap:32px;font-size:14px;padding-bottom:12px}
+.contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 80px;margin-bottom:64px}
+.contacts div{display:flex;flex-direction:column;gap:8px;font-size:20px;font-weight:300;line-height:1.5}
+.contacts .label{color:var(--on-ink-muted)}
+.contacts a{border-bottom:1px solid rgba(255,255,255,.35);align-self:flex-start}
+.contacts a:hover{border-color:#fff}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.25);font-size:14px;color:var(--on-ink-muted)}
+footer .wrap{position:relative}
+
+:focus-visible{outline:2px solid #7fa7d6;outline-offset:3px}
+
+@media (max-width:980px){
+  .links>a{display:none}
+  .two,.terms{grid-template-columns:1fr;gap:48px}
+  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contacts{grid-template-columns:1fr 1fr}
+  .step{grid-template-columns:80px minmax(0,1fr);row-gap:8px;padding:28px}
+  .step span:last-child{grid-column:2}
+}
+@media (max-width:620px){
+  .grid3,.contacts{grid-template-columns:1fr}
+  .langs{margin-left:0}
+  .langs a{width:40px;height:40px}
+  .facts{padding:28px}
+  .step{grid-template-columns:1fr;padding:24px}
+  .step span:last-child{grid-column:1}
+  .hero p{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top" class="dark hero">
+  <svg class="scenery" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" style="height:100%" aria-hidden="true">
+    <ellipse cx="260" cy="120" rx="420" ry="40" fill="#fff" opacity=".035"/>
+    <ellipse cx="980" cy="200" rx="520" ry="46" fill="#fff" opacity=".03"/>
+    <ellipse cx="620" cy="330" rx="620" ry="36" fill="#fff" opacity=".025"/>
+    <ellipse cx="1260" cy="80" rx="300" ry="28" fill="#fff" opacity=".03"/>
+    <path d="M0 520 L120 472 L260 500 L380 444 L520 482 L660 422 L800 470 L940 432 L1080 480 L1220 440 L1340 468 L1440 452 L1440 820 L0 820 Z" fill="#fff" opacity=".06"/>
+    <path d="M0 580 C200 540 300 592 460 552 C620 512 760 582 920 546 C1080 510 1220 572 1440 530 L1440 820 L0 820 Z" fill="#fff" opacity=".04"/>
+    <path d="M0 642 C180 602 340 662 520 622 C700 582 860 652 1040 616 C1200 586 1320 632 1440 610 L1440 820 L0 820 Z" fill="#000" opacity=".18"/>
+    <path d="M0 712 C220 680 380 732 600 700 C820 670 1000 726 1220 696 C1320 682 1400 700 1440 694 L1440 820 L0 820 Z" fill="#000" opacity=".28"/>
+    <path d="M0 772 C300 744 600 792 900 766 C1150 744 1300 776 1440 760 L1440 820 L0 820 Z" fill="#000" opacity=".38"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <nav class="nav" aria-label="Main">
+      <a href="#top" class="logo" aria-label="SIA Innovatio - home"><b>innovatio</b><small>SIA</small></a>
+      <div class="links caps">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#terms">Terms</a>
+        <a href="#contacts">Contacts</a>
+        <div class="langs">
+          <a href="#top" aria-current="true" aria-label="English">EN</a>
+          <a href="#top" aria-label="Latviski">LV</a>
+          <a href="#top" aria-label="По-русски">RU</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-body">
+      <h1>IT Consulting</h1>
+      <div class="rule"></div>
+      <p class="caps" style="font-weight:400">Independent, practical advice on software, infrastructure and digital processes - so your technology decisions are clear and well founded</p>
+      <div class="btns caps">
+        <a class="btn" href="#services">Our services</a>
+        <a class="btn" href="#contacts">Get in touch</a>
+      </div>
+    </div>
+    <a class="scroll caps" href="#about">
+      <span>Scroll down</span>
+      <svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="M2 2 L14 13 L26 2"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <div class="head"><h2>About</h2><div class="rule"></div></div>
+    <div class="two">
+      <div class="prose">
+        <p>SIA Innovatio is a Latvian company providing general IT consulting. We help organisations understand the technology they already have, choose what they need next and put practical solutions in place.</p>
+        <p>Engagements range from a single review or workshop to ongoing advisory support. Every piece of work is agreed in writing beforehand, with a clear scope and clear deliverables.</p>
+      </div>
+      <div class="facts">
+        <div><span class="label">COMPANY</span><span>SIA Innovatio</span></div>
+        <div><span class="label">REGISTRATION NO.</span><span>40103159245</span></div>
+        <div><span class="label">VAT NO.</span><span>LV40103159245</span></div>
+        <div><span class="label">LEGAL ADDRESS</span><span>Riga, Latvia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="soft">
+  <div class="wrap">
+    <div class="head"><h2>Services</h2><div class="rule"></div></div>
+    <div class="grid3">
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 L13.5 13.5 L8.5 15.5 L10.5 10.5 Z"/></svg>
+        <h3 class="caps">IT strategy &amp; advisory</h3>
+        <p>Technology roadmaps, tool and vendor selection, and an independent second opinion before larger investments.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 L21 8 L12 13 L3 8 Z"/><path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/></svg>
+        <h3 class="caps">Software architecture</h3>
+        <p>Reviews of existing systems, architecture design for new ones, and assessments of code quality and technical debt.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18 H17.5 A3.5 3.5 0 0 0 17.5 11 A5.5 5.5 0 0 0 6.8 9.6 A4.2 4.2 0 0 0 7 18 Z"/></svg>
+        <h3 class="caps">Cloud &amp; infrastructure</h3>
+        <p>Server and hosting setup, containerisation, migration planning and day-to-day operational good practice.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5 V18.5 C4.5 19.9 7.9 21 12 21 C16.1 21 19.5 19.9 19.5 18.5 V5.5"/><path d="M4.5 12 C4.5 13.4 7.9 14.5 12 14.5 C16.1 14.5 19.5 13.4 19.5 12"/></svg>
+        <h3 class="caps">Data &amp; databases</h3>
+        <p>Database design and performance reviews, reporting, and reliable integrations between the systems you use.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12 A8 8 0 0 1 6.3 17.7"/><path d="M4 12 A8 8 0 0 1 17.7 6.3"/><path d="M17.5 2.8 L17.7 6.3 L14.2 6.6"/><path d="M6.5 21.2 L6.3 17.7 L9.8 17.4"/></svg>
+        <h3 class="caps">Process automation</h3>
+        <p>Automating repetitive workflows and connecting CRM, marketing and internal tools so data flows without manual work.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 L19.5 6 V11.5 C19.5 16 16.3 19.6 12 21 C7.7 19.6 4.5 16 4.5 11.5 V6 Z"/><path d="M8.8 12 L11.2 14.4 L15.4 10"/></svg>
+        <h3 class="caps">Security &amp; reliability</h3>
+        <p>Access and permission reviews, backup and monitoring checks, and practical steps to reduce operational risk.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="dark">
+  <div class="wrap">
+    <div class="head"><h2>How we work</h2><div class="rule"></div></div>
+    <div class="steps">
+      <div class="step" style="background:rgba(255,255,255,.1)"><span>01</span><span class="caps">Introductory conversation</span><span>We talk through your situation, your goals and any constraints.</span></div>
+      <div class="step" style="background:rgba(255,255,255,.075)"><span>02</span><span class="caps">Scope &amp; agreement</span><span>Scope, timeline and terms are agreed in writing before any work begins.</span></div>
+      <div class="step" style="background:rgba(255,255,255,.05)"><span>03</span><span class="caps">Delivery</span><span>The work is carried out with regular updates and no surprises.</span></div>
+      <div class="step" style="background:rgba(255,255,255,.025)"><span>04</span><span class="caps">Handover</span><span>You receive documentation and recommendations that stay with you.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="wrap">
+    <div class="head"><h2>Terms &amp; Conditions</h2><div class="rule"></div><span class="label" style="font-size:13px">LAST UPDATED: 18.09.2026</span></div>
+    <div class="terms">
+      <div><h3 class="caps">1. General</h3><p>These terms apply to the use of this website and to general communication with SIA Innovatio, registration no. 40103159245, legal address Riga, Latvia (the "Company"). By using the website you accept these terms.</p></div>
+      <div><h3 class="caps">2. No offer</h3><p>This website is for information only. Nothing on it is an offer, a quotation or a binding commitment. No products or services can be ordered or paid for through the website.</p></div>
+      <div><h3 class="caps">3. Consulting engagements</h3><p>Any consulting services are provided only under a separate written agreement between the Company and the client. The scope, fees, timeline and responsibilities are set out in that agreement, which prevails over these terms.</p></div>
+      <div><h3 class="caps">4. Accuracy of information</h3><p>We aim to keep the information on this website accurate and current, but it is provided "as is" and without warranties of any kind. It is general in nature and is not professional advice for your specific situation.</p></div>
+      <div><h3 class="caps">5. Limitation of liability</h3><p>To the extent permitted by law, the Company is not liable for any loss or damage arising from the use of this website or reliance on its content, including through links to third-party websites.</p></div>
+      <div><h3 class="caps">6. Intellectual property</h3><p>All text, graphics and other content on this website belong to the Company unless stated otherwise, and may not be copied or reused for commercial purposes without prior written permission.</p></div>
+      <div><h3 class="caps">7. Personal data</h3><p>If you contact us, we use your details only to reply and to handle your enquiry, in line with the General Data Protection Regulation (EU) 2016/679. You may request access to or deletion of your data.</p></div>
+      <div><h3 class="caps">8. Confidentiality</h3><p>Information shared with the Company during initial discussions is treated as confidential and used only to assess the enquiry. Further confidentiality obligations are defined in the engagement agreement.</p></div>
+      <div><h3 class="caps">9. Governing law</h3><p>These terms are governed by the laws of the Republic of Latvia. Any disputes are resolved in the courts of the Republic of Latvia.</p></div>
+      <div><h3 class="caps">10. Changes</h3><p>The Company may update these terms at any time. The current version is always published on this page, with the date of the latest update shown above.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contacts" class="dark">
+  <svg class="scenery" viewBox="0 0 1440 420" preserveAspectRatio="none" style="height:420px" aria-hidden="true">
+    <path d="M0 120 C220 90 380 140 600 108 C820 78 1000 134 1220 104 C1320 90 1400 108 1440 102 L1440 420 L0 420 Z" fill="#000" opacity=".14"/>
+    <path d="M0 200 C300 172 600 222 900 194 C1150 172 1300 206 1440 190 L1440 420 L0 420 Z" fill="#fff" opacity=".03"/>
+    <path d="M0 290 C180 260 340 318 520 282 C700 250 860 312 1040 280 C1200 254 1320 296 1440 276 L1440 420 L0 420 Z" fill="#000" opacity=".16"/>
+    <ellipse cx="400" cy="340" rx="520" ry="14" fill="#fff" opacity=".03"/>
+    <ellipse cx="1100" cy="380" rx="420" ry="10" fill="#fff" opacity=".03"/>
+  </svg>
+  <div class="wrap">
+    <div class="foot-top">
+      <div><h2>Contacts</h2><div class="rule"></div></div>
+      <nav class="foot-nav caps" aria-label="Footer">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#approach">Approach</a><a href="#terms">Terms</a><a href="#top">Top</a>
+      </nav>
+    </div>
+    <div class="contacts">
+      <div><span class="label">E-MAIL</span><a href="mailto:marija@innovatio.lv">marija@innovatio.lv</a></div>
+      <div><span class="label">ADDRESS</span><span>Riga, Latvia</span></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 SIA Innovatio · Reg. no. 40103159245</span>
+      <span>This website is for information only and does not constitute an offer.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
