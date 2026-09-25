@@ -20,7 +20,6 @@ h1,h2,h3,p{margin:0}
 .caps{font-weight:700;letter-spacing:1px;text-transform:uppercase}
 .label{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--muted)}
 .dark{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.scenery{position:absolute;left:0;bottom:0;width:100%;pointer-events:none}
 .head{display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center;margin-bottom:72px}
 .head h2{font-size:clamp(48px,7vw,80px);font-weight:300;line-height:1.1}
 .rule{width:130px;height:1px;background:var(--rule)}
@@ -34,13 +33,10 @@ section{padding:clamp(72px,9vw,120px) 0}
 .logo small{font-size:12px;font-weight:700;letter-spacing:3px}
 .links{display:flex;align-items:center;gap:32px;font-size:14px}
 .links a:hover,.foot-nav a:hover{color:#c9d3df}
-.langs{display:flex;gap:8px;margin-left:8px}
-.langs a{width:44px;height:44px;border-radius:50%;border:1px solid #fff;display:flex;align-items:center;justify-content:center;font-size:13px}
-.langs a[aria-current]{background:#fff;color:var(--ink)}
 
 /* hero */
-.hero{min-height:max(640px,100vh);display:flex}
-.hero-inner{position:relative;flex:1;display:flex;flex-direction:column;padding:64px 0 40px}
+.hero{min-height:max(640px,100vh);display:flex;background:linear-gradient(rgba(18,24,32,.28),rgba(18,24,32,.28)),url(assets/top.jpg) center bottom/cover no-repeat var(--ink)}
+.hero-inner{position:relative;display:flex;flex-direction:column;padding:64px 0 40px}
 .hero-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center;padding:48px 0}
 .hero h1{font-size:clamp(56px,9vw,104px);font-weight:100;letter-spacing:1px;line-height:1.05}
 .hero p{max-width:680px;font-size:15px;letter-spacing:1px;line-height:1.8}
@@ -77,7 +73,7 @@ section{padding:clamp(72px,9vw,120px) 0}
 .terms p{font-size:15px;line-height:1.75;color:var(--body)}
 
 /* footer */
-footer{padding:110px 0 80px}
+footer.dark{padding:110px 0 80px;background:linear-gradient(rgba(18,24,32,.5),rgba(18,24,32,.5)),url(assets/bottom.jpg) center top/cover no-repeat var(--ink)}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:64px}
 .foot-top h2{font-size:clamp(56px,7vw,88px);font-weight:100;line-height:1;margin-bottom:28px}
 .foot-nav{display:flex;flex-wrap:wrap;gap:32px;font-size:14px;padding-bottom:12px}
@@ -92,7 +88,7 @@ footer .wrap{position:relative}
 :focus-visible{outline:2px solid #7fa7d6;outline-offset:3px}
 
 @media (max-width:980px){
-  .links>a{display:none}
+  .links{gap:20px;font-size:12px}
   .two,.terms{grid-template-columns:1fr;gap:48px}
   .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .contacts{grid-template-columns:1fr 1fr}
@@ -100,9 +96,8 @@ footer .wrap{position:relative}
   .step span:last-child{grid-column:2}
 }
 @media (max-width:620px){
+  .links{display:none}
   .grid3,.contacts{grid-template-columns:1fr}
-  .langs{margin-left:0}
-  .langs a{width:40px;height:40px}
   .facts{padding:28px}
   .step{grid-template-columns:1fr;padding:24px}
   .step span:last-child{grid-column:1}
@@ -114,17 +109,6 @@ footer .wrap{position:relative}
 <body>
 
 <header id="top" class="dark hero">
-  <svg class="scenery" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" style="height:100%" aria-hidden="true">
-    <ellipse cx="260" cy="120" rx="420" ry="40" fill="#fff" opacity=".035"/>
-    <ellipse cx="980" cy="200" rx="520" ry="46" fill="#fff" opacity=".03"/>
-    <ellipse cx="620" cy="330" rx="620" ry="36" fill="#fff" opacity=".025"/>
-    <ellipse cx="1260" cy="80" rx="300" ry="28" fill="#fff" opacity=".03"/>
-    <path d="M0 520 L120 472 L260 500 L380 444 L520 482 L660 422 L800 470 L940 432 L1080 480 L1220 440 L1340 468 L1440 452 L1440 820 L0 820 Z" fill="#fff" opacity=".06"/>
-    <path d="M0 580 C200 540 300 592 460 552 C620 512 760 582 920 546 C1080 510 1220 572 1440 530 L1440 820 L0 820 Z" fill="#fff" opacity=".04"/>
-    <path d="M0 642 C180 602 340 662 520 622 C700 582 860 652 1040 616 C1200 586 1320 632 1440 610 L1440 820 L0 820 Z" fill="#000" opacity=".18"/>
-    <path d="M0 712 C220 680 380 732 600 700 C820 670 1000 726 1220 696 C1320 682 1400 700 1440 694 L1440 820 L0 820 Z" fill="#000" opacity=".28"/>
-    <path d="M0 772 C300 744 600 792 900 766 C1150 744 1300 776 1440 760 L1440 820 L0 820 Z" fill="#000" opacity=".38"/>
-  </svg>
   <div class="wrap hero-inner">
     <nav class="nav" aria-label="Main">
       <a href="#top" class="logo" aria-label="SIA Innovatio - home"><b>innovatio</b><small>SIA</small></a>
@@ -134,11 +118,6 @@ footer .wrap{position:relative}
         <a href="#approach">Approach</a>
         <a href="#terms">Terms</a>
         <a href="#contacts">Contacts</a>
-        <div class="langs">
-          <a href="#top" aria-current="true" aria-label="English">EN</a>
-          <a href="#top" aria-label="Latviski">LV</a>
-          <a href="#top" aria-label="По-русски">RU</a>
-        </div>
       </div>
     </nav>
     <div class="hero-body">
@@ -246,13 +225,6 @@ footer .wrap{position:relative}
 </main>
 
 <footer id="contacts" class="dark">
-  <svg class="scenery" viewBox="0 0 1440 420" preserveAspectRatio="none" style="height:420px" aria-hidden="true">
-    <path d="M0 120 C220 90 380 140 600 108 C820 78 1000 134 1220 104 C1320 90 1400 108 1440 102 L1440 420 L0 420 Z" fill="#000" opacity=".14"/>
-    <path d="M0 200 C300 172 600 222 900 194 C1150 172 1300 206 1440 190 L1440 420 L0 420 Z" fill="#fff" opacity=".03"/>
-    <path d="M0 290 C180 260 340 318 520 282 C700 250 860 312 1040 280 C1200 254 1320 296 1440 276 L1440 420 L0 420 Z" fill="#000" opacity=".16"/>
-    <ellipse cx="400" cy="340" rx="520" ry="14" fill="#fff" opacity=".03"/>
-    <ellipse cx="1100" cy="380" rx="420" ry="10" fill="#fff" opacity=".03"/>
-  </svg>
   <div class="wrap">
     <div class="foot-top">
       <div><h2>Contacts</h2><div class="rule"></div></div>
